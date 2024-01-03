@@ -54,7 +54,7 @@ body {
 /* Rest of your CSS stays the same */
 
 /* Style for the buttons, now targeting input elements */
-#fetchHtml, #pasteHTML {
+#fetchHtml, #dropHtml {
     width: 50%; /* Each button takes up half the width */
     box-sizing: border-box; /* Include padding and borders in the element's total width and height */
     float: left; /* Align buttons side by side */
