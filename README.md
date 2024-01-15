@@ -1,6 +1,11 @@
 
 # MagicSync v1 - browser extension
 
+## Demo
+
+![til](./appdemo.gif)
+
+
 ## Getting Started
 
 1. Install the necessary dependencies:
