@@ -86,18 +86,25 @@ export class FillPipeline {
         this.blocks.push(block);
     }
 
-    createPipelineFromJson(json) {
-        for (let block of json) {
-            switch (block.type) {
+    createPipelineFromJson(jsonString) {
+        try {
+            // Parse the JSON string to a JavaScript object
+            let json = JSON.parse(jsonString);
+            console.log(json);  // Log to inspect the structure
+
+            // Process each block in the JSON object
+            switch (json.type) {
                 case "fillText":
-                    this.addBlock(new FillTextBlock(block.selector, block.text));
+                    this.addBlock(new FillTextBlock(json.selector, json.text));
                     break;
                 case "clickButton":
-                    this.addBlock(new ClickButtonBlock(block.selector));
+                    this.addBlock(new ClickButtonBlock(json.selector));
                     break;
                 default:
-                    console.error(`Unknown block type "${block.type}".`);
+                    console.error(`Unknown block type "${json.type}".`);
             }
+        } catch (e) {
+            console.error('Error parsing JSON:', e);
         }
     }
 
